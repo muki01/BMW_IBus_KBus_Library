@@ -1,6 +1,6 @@
-#include "RingBuffer.h"
+#include "IbusRingBuffer.h"
 
-RingBuffer::RingBuffer(int size) {
+IbusRingBuffer::IbusRingBuffer(int size) {
   bufferSize = size;
   bufferTail = 0;
   bufferHead = 0;
@@ -8,18 +8,18 @@ RingBuffer::RingBuffer(int size) {
   memset(buffer_p, 0, size);
 }
 
-RingBuffer::~RingBuffer() {
+IbusRingBuffer::~IbusRingBuffer() {
   if (buffer_p) free(buffer_p);
 }
 
 // public functions
 
-int RingBuffer::available(void) {
+int IbusRingBuffer::available(void) {
   int ByteCount = (bufferSize + bufferHead - bufferTail) % bufferSize;
   return ByteCount;
 }
 
-int RingBuffer::read(void) {
+int IbusRingBuffer::read(void) {
   if (bufferHead == bufferTail) {
     return -1;
   } else {
@@ -33,7 +33,7 @@ int RingBuffer::read(void) {
   }
 }
 
-byte RingBuffer::write(int c) {
+byte IbusRingBuffer::write(int c) {
   if ((bufferHead + 1) % bufferSize == bufferTail) {
     return -1;
   }
@@ -42,13 +42,13 @@ byte RingBuffer::write(int c) {
   return 0;
 }
 
-void RingBuffer::remove(int n) {
+void IbusRingBuffer::remove(int n) {
   if (bufferHead != bufferTail) {
     bufferTail = (bufferTail + n) % bufferSize;
   }
 }
 
-int RingBuffer::peek(void) {
+int IbusRingBuffer::peek(void) {
   if (bufferHead == bufferTail) {
     return -1;
   } else {
@@ -56,7 +56,7 @@ int RingBuffer::peek(void) {
   }
 }
 
-int RingBuffer::peek(int n) {
+int IbusRingBuffer::peek(int n) {
   if (bufferHead == bufferTail) {
     return -1;
   } else {

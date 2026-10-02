@@ -1,17 +1,17 @@
 #include "Arduino.h"
 
-#ifndef RingBuffer_h
-#define RingBuffer_h
+#ifndef IbusRingBuffer_h
+#define IbusRingBuffer_h
 
-class RingBuffer {
+class IbusRingBuffer {
  private:
   int bufferSize;
   unsigned int bufferHead, bufferTail;
   byte *buffer_p;
 
  public:
-  RingBuffer(int size);
-  ~RingBuffer();
+  IbusRingBuffer(int size);
+  ~IbusRingBuffer();
   int available(void);
   int peek(void);
   int peek(int);
