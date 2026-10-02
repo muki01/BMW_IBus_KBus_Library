@@ -7,7 +7,7 @@
 **Read, decode and send BMW I-Bus and K-Bus messages from your own sketch.**<br>
 A compact Arduino library that handles framing, checksums and bus arbitration, so you can sniff bus traffic or control lights, windows, locks and radio on classic BMWs — E46, E39, E38, E53 and more.
 
-[![Stars](https://img.shields.io/github/stars/muki01/BMW_IBus_KBus_Library?style=flat-square&logo=github&color=ff8a2a)](https://github.com/muki01/BMW_IBus_KBus_Library/stargazers)
+[![Stars](https://img.shields.io/github/stars/muki01/BMW_IBus_KBus_Library?style=flat-square&logo=github&color=22d3ee)](https://github.com/muki01/BMW_IBus_KBus_Library/stargazers)
 [![Forks](https://img.shields.io/github/forks/muki01/BMW_IBus_KBus_Library?style=flat-square&logo=github&color=38bdf8)](https://github.com/muki01/BMW_IBus_KBus_Library/forks)
 [![Issues](https://img.shields.io/github/issues/muki01/BMW_IBus_KBus_Library?style=flat-square)](https://github.com/muki01/BMW_IBus_KBus_Library/issues)
 [![License: MIT](https://img.shields.io/github/license/muki01/BMW_IBus_KBus_Library?style=flat-square)](LICENSE)
@@ -41,7 +41,7 @@ flowchart LR
     APP -->|"write()"| LIB
 ```
 
-Looking for ready-to-flash firmware? The companion project **[BMW_IBus_KBus](https://github.com/muki01/BMW_IBus_KBus)** has complete sketches for the Arduino Nano and the ESP32 — welcome lights, follow-me-home and a web interface — together with an E46 message table.
+Looking for ready-to-flash firmware? The companion project **[BMW_IBus_KBus](https://github.com/muki01/BMW_IBus_KBus)** has complete sketches for the ESP32 and the Arduino Nano — a web interface to control the car from your phone, welcome lights and follow-me-home — together with an E46 message table.
 
 ## ✨ Features
 
