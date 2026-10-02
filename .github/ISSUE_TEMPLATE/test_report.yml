@@ -1,0 +1,54 @@
+name: 🧪 Test report
+description: Tell us how the library behaves on your board and in your car
+title: "[Test] <board> on <vehicle>"
+labels: ["test-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Real-world test reports show which boards and cars are supported. Thank you! 🙌
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      placeholder: e.g. ESP32 DevKit, Arduino Mega 2560, Raspberry Pi Pico
+    validations:
+      required: true
+  - type: input
+    id: interface
+    attributes:
+      label: Bus interface
+      placeholder: e.g. TH3122.4
+    validations:
+      required: true
+  - type: input
+    id: vehicle
+    attributes:
+      label: Vehicle
+      placeholder: Chassis and model year (e.g. BMW E39 2001)
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - ✅ Works
+        - ⚠️ Partially works
+        - ❌ Does not work
+    validations:
+      required: true
+  - type: checkboxes
+    id: features
+    attributes:
+      label: What works
+      options:
+        - label: Receiving messages
+        - label: Sending messages
+        - label: Source filter
+        - label: Sleep and wake-up
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Pins used, quirks, debug output.

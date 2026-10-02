@@ -1,0 +1,58 @@
+name: 🐛 Bug report
+description: Something isn't working as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in as much as you can. The debug output is the most helpful part.
+  - type: input
+    id: version
+    attributes:
+      label: Library version
+      placeholder: e.g. 1.0.0, or the commit you are using
+    validations:
+      required: true
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      placeholder: e.g. Arduino Nano, ESP32 DevKit, Raspberry Pi Pico
+    validations:
+      required: true
+  - type: dropdown
+    id: interface
+    attributes:
+      label: Bus interface
+      options:
+        - TH3122.4
+        - ELMOS 10026B
+        - MCP2025
+        - Optocouplers
+        - Other / custom PCB
+    validations:
+      required: true
+  - type: input
+    id: vehicle
+    attributes:
+      label: Vehicle
+      placeholder: Chassis and model year (e.g. BMW E46 2003)
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: sketch
+    attributes:
+      label: Minimal sketch
+      description: The smallest sketch that shows the problem.
+      render: cpp
+  - type: textarea
+    id: logs
+    attributes:
+      label: Debug output
+      description: Paste the output of `setIbusDebug()`.
+      render: text

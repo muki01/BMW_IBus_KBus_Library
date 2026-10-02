@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🚗 Ready-made firmware and E46 messages
+    url: https://github.com/muki01/BMW_IBus_KBus
+    about: Complete sketches, the web interface and the message table live in the firmware project.
+  - name: 🔧 OBD-II diagnostics over the K-Line
+    url: https://github.com/muki01/OBD2_KLine_Library
+    about: The K-Bus is not the K-Line. For trouble codes and live engine data see the OBD2 K-Line Library.
+  - name: 💼 Custom development
+    url: mailto:muksin.muksin04@gmail.com
+    about: Need custom firmware, a protocol implementation or a PCB? Get in touch.

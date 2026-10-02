@@ -66,6 +66,4 @@ class BMW_IBus_KBus {
   byte filterCount;
 };
 
-typedef BMW_IBus_KBus IbusSerial;  // previous name of the class
-
 #endif
