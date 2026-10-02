@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-labelledby="t d">
+  <title id="t">BMW IBus KBus - Arduino library for the BMW I-Bus and K-Bus</title>
+  <desc id="d">Banner showing a decoded BMW K-Bus frame 50 04 68 32 11 1F (steering wheel volume up) with source, length, destination, command, data and XOR checksum bytes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111a2e"/>
+    </linearGradient>
+    <radialGradient id="amber" cx="78%" cy="28%" r="55%">
+      <stop offset="0" stop-color="#ff7a1a" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blue" cx="8%" cy="100%" r="55%">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb347"/>
+      <stop offset="1" stop-color="#ff6a13"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+    <clipPath id="card"><rect width="1280" height="440" rx="22"/></clipPath>
+  </defs>
+    <style>
+      .glow{animation:hit 6s linear infinite}.b0 .glow{animation-delay:0s}.b1 .glow{animation-delay:1s}.b2 .glow{animation-delay:2s}.b3 .glow{animation-delay:3s}.b4 .glow{animation-delay:4s}.b5 .glow{animation-delay:5s}
+      .scan{animation:scan 6s linear infinite}
+      .live{animation:blink 1.6s ease-in-out infinite}
+      @keyframes hit{0%{opacity:0}3%{opacity:1}16%{opacity:1}24%{opacity:0}100%{opacity:0}}
+      @keyframes scan{from{transform:translateX(0)}to{transform:translateX(468px)}}
+      @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+      @media (prefers-reduced-motion:reduce){.glow,.scan,.live{animation:none}.scan{opacity:0}}
+    </style>
+
+  <g clip-path="url(#card)">
+    <rect width="1280" height="440" fill="url(#bg)"/>
+    <rect width="1280" height="440" fill="url(#grid)"/>
+    <rect width="1280" height="440" fill="url(#amber)"/>
+    <rect width="1280" height="440" fill="url(#blue)"/>
+
+    <!-- left column -->
+    <text x="64" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13" letter-spacing="2.4" fill="#ff9a3c">ARDUINO LIBRARY</text>
+    <text x="60" y="182" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="82" font-weight="800" letter-spacing="-2" fill="#f8fafc">BMW <tspan fill="url(#title)">I/K-Bus</tspan></text>
+    <text font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="23" fill="#cbd5e1">
+      <tspan x="64" y="228">Read, decode and send I-Bus &amp; K-Bus messages</tspan>
+      <tspan x="64" y="259">on classic BMWs from your own sketch.</tspan>
+    </text>
+    <rect x="64" y="286" width="105" height="32" rx="16" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="116.5" y="307" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="14" fill="#cbd5e1">9600 baud</text>
+    <rect x="179" y="286" width="54" height="32" rx="16" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="206.0" y="307" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="14" fill="#cbd5e1">8E1</text>
+    <rect x="243" y="286" width="123" height="32" rx="16" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="304.5" y="307" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="14" fill="#cbd5e1">single wire</text>
+    <rect x="376" y="286" width="62" height="32" rx="16" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".14"/>
+    <text x="407.0" y="307" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="14" fill="#cbd5e1">12 V</text>
+    <text x="64" y="362" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="2" fill="#64748b">SUPPORTED CHASSIS</text>
+    <text x="64" y="386" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="15" fill="#94a3b8">E31 · E38 · E39 · E46 · E52 · E53 · E83 · E85 · E87</text>
+
+    <!-- right column: bus analyzer panel -->
+    <rect x="704" y="64" width="512" height="312" rx="18" fill="#0a101c" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".10"/>
+    <circle class="live" cx="730" cy="91" r="5" fill="#34d399"/>
+    <text x="744" y="96" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13" letter-spacing="1.5" fill="#94a3b8">K-BUS  LIVE</text>
+    <text x="1194" y="96" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13" fill="#64748b">9600 8E1</text>
+    <path d="M704 110H1216" stroke="#ffffff" stroke-opacity=".08"/>
+
+    <path d="M712.0 126 H726.0 V164 H733.1 H740.2 H747.3 H754.4 H761.5 V126 H768.5 V164 H775.6 V126 H782.7 V164 H789.8 H796.9 V126 H804.0 V164 H811.1 H818.2 H825.3 V126 H832.4 V164 H839.5 H846.5 H853.6 H860.7 H867.8 V126 H874.9 H882.0 V164 H889.1 H896.2 H903.3 H910.4 V126 H917.5 V164 H924.5 V126 H931.6 H938.7 V164 H945.8 V126 H952.9 H960.0 V164 H967.1 H974.2 V126 H981.3 V164 H988.4 H995.5 V126 H1002.5 H1009.6 V164 H1016.7 H1023.8 V126 H1030.9 H1038.0 V164 H1045.1 V126 H1052.2 V164 H1059.3 H1066.4 H1073.5 V126 H1080.5 V164 H1087.6 H1094.7 H1101.8 H1108.9 V126 H1116.0 V164 H1123.1 V126 H1130.2 H1137.3 H1144.4 H1151.5 H1158.5 V164 H1165.6 H1172.7 H1179.8 V126 H1186.9 H1194.0 H1208.0" fill="none" stroke="#ff8a2a" stroke-width="2" stroke-linejoin="round"/>
+    <rect class="scan" x="725.0" y="118" width="2" height="54" fill="#ffd9a8" opacity=".85"/>
+
+    <g class="byte b0">
+      <rect x="726.0" y="202" width="68" height="64" rx="10" fill="#38bdf8" fill-opacity=".10" stroke="#38bdf8" stroke-opacity=".55" stroke-width="1.5"/>
+      <rect class="glow" x="726.0" y="202" width="68" height="64" rx="10" fill="#38bdf8" fill-opacity=".22" stroke="#38bdf8" stroke-width="2" opacity="0"/>
+      <text x="760.0" y="244" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700" fill="#f8fafc">50</text>
+      <text x="760.0" y="290" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="1.5" fill="#38bdf8">SRC</text>
+    </g>
+    <g class="byte b1">
+      <rect x="806.0" y="202" width="68" height="64" rx="10" fill="#94a3b8" fill-opacity=".10" stroke="#94a3b8" stroke-opacity=".55" stroke-width="1.5"/>
+      <rect class="glow" x="806.0" y="202" width="68" height="64" rx="10" fill="#94a3b8" fill-opacity=".22" stroke="#94a3b8" stroke-width="2" opacity="0"/>
+      <text x="840.0" y="244" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700" fill="#f8fafc">04</text>
+      <text x="840.0" y="290" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="1.5" fill="#94a3b8">LEN</text>
+    </g>
+    <g class="byte b2">
+      <rect x="886.0" y="202" width="68" height="64" rx="10" fill="#34d399" fill-opacity=".10" stroke="#34d399" stroke-opacity=".55" stroke-width="1.5"/>
+      <rect class="glow" x="886.0" y="202" width="68" height="64" rx="10" fill="#34d399" fill-opacity=".22" stroke="#34d399" stroke-width="2" opacity="0"/>
+      <text x="920.0" y="244" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700" fill="#f8fafc">68</text>
+      <text x="920.0" y="290" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="1.5" fill="#34d399">DST</text>
+    </g>
+    <g class="byte b3">
+      <rect x="966.0" y="202" width="68" height="64" rx="10" fill="#fbbf24" fill-opacity=".10" stroke="#fbbf24" stroke-opacity=".55" stroke-width="1.5"/>
+      <rect class="glow" x="966.0" y="202" width="68" height="64" rx="10" fill="#fbbf24" fill-opacity=".22" stroke="#fbbf24" stroke-width="2" opacity="0"/>
+      <text x="1000.0" y="244" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700" fill="#f8fafc">32</text>
+      <text x="1000.0" y="290" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="1.5" fill="#fbbf24">CMD</text>
+    </g>
+    <g class="byte b4">
+      <rect x="1046.0" y="202" width="68" height="64" rx="10" fill="#a78bfa" fill-opacity=".10" stroke="#a78bfa" stroke-opacity=".55" stroke-width="1.5"/>
+      <rect class="glow" x="1046.0" y="202" width="68" height="64" rx="10" fill="#a78bfa" fill-opacity=".22" stroke="#a78bfa" stroke-width="2" opacity="0"/>
+      <text x="1080.0" y="244" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700" fill="#f8fafc">11</text>
+      <text x="1080.0" y="290" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="1.5" fill="#a78bfa">DATA</text>
+    </g>
+    <g class="byte b5">
+      <rect x="1126.0" y="202" width="68" height="64" rx="10" fill="#fb7185" fill-opacity=".10" stroke="#fb7185" stroke-opacity=".55" stroke-width="1.5"/>
+      <rect class="glow" x="1126.0" y="202" width="68" height="64" rx="10" fill="#fb7185" fill-opacity=".22" stroke="#fb7185" stroke-width="2" opacity="0"/>
+      <text x="1160.0" y="244" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="27" font-weight="700" fill="#f8fafc">1F</text>
+      <text x="1160.0" y="290" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" letter-spacing="1.5" fill="#fb7185">XOR</text>
+    </g>
+
+    <path d="M704 316H1216" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="726.0" y="348" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="15" fill="#e2e8f0">MFL <tspan fill="#64748b">&#8594;</tspan> RAD <tspan fill="#64748b">·</tspan> <tspan fill="#fbbf24">Volume Up</tspan></text>
+    <text x="1194.0" y="348" text-anchor="end" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13" fill="#34d399">checksum OK</text>
+  </g>
+</svg>

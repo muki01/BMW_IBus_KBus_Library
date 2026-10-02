@@ -1,0 +1,34 @@
+###########################################
+# Syntax Coloring Map For BMW_IBus_KBus
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+BMW_IBus_KBus	KEYWORD1
+IbusSerial	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+setIbusSerial	KEYWORD2
+setIbusDebug	KEYWORD2
+setIbusPacketHandler	KEYWORD2
+setPins	KEYWORD2
+setSourceFilter	KEYWORD2
+run	KEYWORD2
+write	KEYWORD2
+startTimer	KEYWORD2
+sleepEnable	KEYWORD2
+sleep	KEYWORD2
+calculateChecksum	KEYWORD2
+printDebugMessage	KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################
+
+IBUS_DEBUG	LITERAL1
+IBUS_ISR_ATTR	LITERAL1
