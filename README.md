@@ -10,7 +10,7 @@ A compact library for Arduino, ESP32, STM32 and Raspberry Pi Pico that handles f
 [![Stars](https://img.shields.io/github/stars/muki01/BMW_IBus_KBus_Library?style=flat-square&logo=github&color=22d3ee)](https://github.com/muki01/BMW_IBus_KBus_Library/stargazers)
 [![Forks](https://img.shields.io/github/forks/muki01/BMW_IBus_KBus_Library?style=flat-square&logo=github&color=38bdf8)](https://github.com/muki01/BMW_IBus_KBus_Library/forks)
 [![Issues](https://img.shields.io/github/issues/muki01/BMW_IBus_KBus_Library?style=flat-square)](https://github.com/muki01/BMW_IBus_KBus_Library/issues)
-[![License: MIT](https://img.shields.io/github/license/muki01/BMW_IBus_KBus_Library?style=flat-square)](LICENSE)
+[![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square)](LICENSE)
 [![Build](https://img.shields.io/github/actions/workflow/status/muki01/BMW_IBus_KBus_Library/arduino-ci.yml?style=flat-square&label=build)](https://github.com/muki01/BMW_IBus_KBus_Library/actions/workflows/arduino-ci.yml)
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white)
 ![ESP32](https://img.shields.io/badge/ESP32-experimental-E7352C?style=flat-square&logo=espressif&logoColor=white)
@@ -357,18 +357,90 @@ Contributions are welcome — especially test reports from the experimental plat
 
 ## 🔗 Related Projects
 
-| Firmware & Readers | Libraries | Manufacturer Protocols | UI |
-| :-- | :-- | :-- | :-- |
-| [OBD2 K-line Reader](https://github.com/muki01/OBD2_K-line_Reader) | [OBD2 K-Line Library](https://github.com/muki01/OBD2_KLine_Library) | [BMW I/K Bus](https://github.com/muki01/BMW_IBus_KBus) | [OBD2 Diagnostic UI](https://github.com/muki01/OBD2-Diagnostic-UI) |
-| [OBD2 CAN Bus Reader](https://github.com/muki01/OBD2_CAN_Bus_Reader) | [OBD2 CAN Bus Library](https://github.com/muki01/OBD2_CAN_Bus_Library) | [VAG KW1281](https://github.com/muki01/VAG_KW1281) | |
+This library is part of a family of open-source automotive projects. They share the same hardware approach, so what you build for one carries over to the others.
+
+<table>
+  <tr>
+    <th colspan="3" align="left">Firmware — flash it and use it</th>
+  </tr>
+  <tr>
+    <td width="30%"><a href="https://github.com/muki01/BMW_IBus_KBus"><b>BMW I-Bus / K-Bus Firmware</b></a></td>
+    <td>Phone control and key-fob light functions for the BMW E46, on the ESP32 and Arduino.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/BMW_IBus_KBus/stargazers"><img src="https://img.shields.io/github/stars/muki01/BMW_IBus_KBus?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of BMW_IBus_KBus"></a></td>
+  </tr>
+  <tr>
+    <td width="30%"><a href="https://github.com/muki01/OBD2_K-line_Reader"><b>OBD2 K-Line Reader</b></a></td>
+    <td>Scan tool for K-Line cars (ISO 9141-2, KWP2000) with a web dashboard, for the ESP32, ESP8266 and Arduino.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/OBD2_K-line_Reader/stargazers"><img src="https://img.shields.io/github/stars/muki01/OBD2_K-line_Reader?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of OBD2_K-line_Reader"></a></td>
+  </tr>
+  <tr>
+    <td width="30%"><a href="https://github.com/muki01/OBD2_CAN_Bus_Reader"><b>OBD2 CAN Bus Reader</b></a></td>
+    <td>Scan tool for CAN bus cars (ISO 15765-4) with the same web dashboard, for the ESP32.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/OBD2_CAN_Bus_Reader/stargazers"><img src="https://img.shields.io/github/stars/muki01/OBD2_CAN_Bus_Reader?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of OBD2_CAN_Bus_Reader"></a></td>
+  </tr>
+  <tr>
+    <td width="30%"><a href="https://github.com/muki01/VAG_KW1281"><b>VAG KW1281</b></a></td>
+    <td>KW1281 diagnostics for VW, Audi, Škoda and SEAT: ECU information, measuring groups and fault codes.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/VAG_KW1281/stargazers"><img src="https://img.shields.io/github/stars/muki01/VAG_KW1281?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of VAG_KW1281"></a></td>
+  </tr>
+  <tr>
+    <th colspan="3" align="left">Libraries — build your own firmware</th>
+  </tr>
+  <tr>
+    <td width="30%"><b>BMW IBus KBus Library</b><br><sub>you are here</sub></td>
+    <td>Receives, checks and sends BMW I-Bus and K-Bus messages; the library behind the BMW firmware.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/BMW_IBus_KBus_Library/stargazers"><img src="https://img.shields.io/github/stars/muki01/BMW_IBus_KBus_Library?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of BMW_IBus_KBus_Library"></a></td>
+  </tr>
+  <tr>
+    <td width="30%"><a href="https://github.com/muki01/OBD2_KLine_Library"><b>OBD2 K-Line Library</b></a></td>
+    <td>K-Line diagnostics behind one API: ISO 9141-2, KWP2000, KW1281, DS2 and KW82.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/OBD2_KLine_Library/stargazers"><img src="https://img.shields.io/github/stars/muki01/OBD2_KLine_Library?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of OBD2_KLine_Library"></a></td>
+  </tr>
+  <tr>
+    <td width="30%"><a href="https://github.com/muki01/OBD2_CAN_Bus_Library"><b>OBD2 CAN Bus Library</b></a></td>
+    <td>OBD-II diagnostics over ISO 15765-4 with the ESP32's built-in CAN controller.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/OBD2_CAN_Bus_Library/stargazers"><img src="https://img.shields.io/github/stars/muki01/OBD2_CAN_Bus_Library?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of OBD2_CAN_Bus_Library"></a></td>
+  </tr>
+  <tr>
+    <th colspan="3" align="left">Interface</th>
+  </tr>
+  <tr>
+    <td width="30%"><a href="https://github.com/muki01/OBD2-Diagnostic-UI"><b>OBD2 Diagnostic UI</b></a></td>
+    <td>The web dashboard used by the two OBD2 readers.</td>
+    <td width="96" align="center"><a href="https://github.com/muki01/OBD2-Diagnostic-UI/stargazers"><img src="https://img.shields.io/github/stars/muki01/OBD2-Diagnostic-UI?style=flat-square&label=stars&color=22d3ee" alt="GitHub stars of OBD2-Diagnostic-UI"></a></td>
+  </tr>
+</table>
+
+## 💼 Custom Development
+
+I design automotive diagnostic tools, firmware and hardware professionally. Whether you need a complete product or only the communication layer, I can help.
+
+| Service | Details |
+| :-- | :-- |
+| **Protocol implementation** | BMW I/K-Bus, K-Line (ISO 9141-2 / KWP2000), CAN / UDS, VAG KW1281 and other manufacturer-specific protocols |
+| **ECU communication & reverse engineering** | Bus sniffing, packet decoding, module control, undocumented ECUs and buses |
+| **ECU security access** | Seed-key algorithms and unlock routines for KWP2000 / UDS |
+| **Embedded firmware** | Arduino, ESP32, ESP8266, STM32, Raspberry Pi Pico |
+| **Custom hardware** | Diagnostic dongles, shields and PCBs designed to your requirements |
+| **Companion apps** | Android, iOS and web apps to visualise, log and control your device |
+
+Have a project in mind? Reach out through the [Contact](#-contact) section below.
+
+## 📬 Contact
+
+For custom development, collaboration, sponsorship or ready-made devices:
+
+| Channel | Address |
+| :-- | :-- |
+| 📧 **Email** | [muksin.muksin04@gmail.com](mailto:muksin.muksin04@gmail.com) |
+| 💼 **LinkedIn** | [linkedin.com/in/muksin-muksin](https://www.linkedin.com/in/muksin-muksin/) |
+| 🐙 **GitHub** | [@muki01](https://github.com/muki01) |
 
 ## ☕ Support the Project
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/muki01)
 [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=SAAH5GHAH6T72)
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-181717?style=for-the-badge&logo=github)](https://github.com/sponsors/muki01)
-
-For custom automotive firmware, hardware or protocol work, contact 📧 **[muksin.muksin04@gmail.com](mailto:muksin.muksin04@gmail.com)**.
 
 ## ⚠️ Disclaimer
 
@@ -379,7 +451,14 @@ BMW is a registered trademark of BMW AG. This project is independent and is not 
 
 ## 📄 License
 
-Released under the [MIT License](LICENSE).
+Released under the **[GNU General Public License v3.0](LICENSE)**.
+
+- You are free to use, study, modify and share this library.
+- If you distribute it — on its own or as part of a product or firmware — you must make the complete source available under the same license.
+
+**Closed-source or commercial product?** A separate commercial license is available. Get in touch through the [Contact](#-contact) section.
+
+Copyright © 2025–2026 Muksin Muksin.
 
 ---
 
