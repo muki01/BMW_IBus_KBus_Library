@@ -41,7 +41,7 @@ flowchart LR
     APP -->|"write()"| LIB
 ```
 
-Looking for ready-made message tables, wiring photos, protocol documents and complete vehicle sketches? See the main project: **[BMW_IBus_KBus](https://github.com/muki01/BMW_IBus_KBus)**.
+Looking for ready-to-flash firmware? The companion project **[BMW_IBus_KBus](https://github.com/muki01/BMW_IBus_KBus)** has complete sketches for the Arduino Nano and the ESP32 — welcome lights, follow-me-home and a web interface — together with an E46 message table.
 
 ## ✨ Features
 
@@ -251,7 +251,7 @@ If you run the library on one of the experimental platforms, please [report how 
 | [`Send_Command`](examples/Send_Command) | Send a message to the car, with and without a pre-calculated checksum. |
 | [`Key_Fob_Events`](examples/Key_Fob_Events) | Filter by module and react to the lock, unlock and trunk buttons of the remote key. |
 
-Complete vehicle sketches — welcome lights, goodbye lights, follow-me-home — and a table of more than 100 E46 messages live in the [main project](https://github.com/muki01/BMW_IBus_KBus).
+Complete vehicle firmware — welcome lights, goodbye lights, follow-me-home and an ESP32 web interface — and a table of more than 100 E46 messages live in the [companion project](https://github.com/muki01/BMW_IBus_KBus).
 
 ## 📍 Where to Connect (BMW E46)
 
