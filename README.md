@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="images/bmw-ibus-kbus-arduino-library-banner.svg" alt="BMW IBus KBus — Arduino library for the BMW I-Bus and K-Bus, showing a decoded frame 50 04 68 32 11 1F" width="100%">
+<img src="images/bmw-ibus-kbus-library-banner.svg" alt="BMW I-Bus / K-Bus library for Arduino, ESP32 and other microcontrollers, showing a decoded frame 50 04 68 32 11 1F" width="100%">
 
-# BMW IBus KBus — Arduino Library
+# BMW I-Bus / K-Bus Library
 
 **Read, decode and send BMW I-Bus and K-Bus messages from your own sketch.**<br>
-A compact Arduino library that handles framing, checksums and bus arbitration, so you can sniff bus traffic or control lights, windows, locks and radio on classic BMWs — E46, E39, E38, E53 and more.
+A compact library for Arduino, ESP32, STM32 and Raspberry Pi Pico that handles framing, checksums and bus arbitration, so you can sniff bus traffic or control lights, windows, locks and radio on classic BMWs — E46, E39, E38, E53 and more.
 
 [![Stars](https://img.shields.io/github/stars/muki01/BMW_IBus_KBus_Library?style=flat-square&logo=github&color=22d3ee)](https://github.com/muki01/BMW_IBus_KBus_Library/stargazers)
 [![Forks](https://img.shields.io/github/forks/muki01/BMW_IBus_KBus_Library?style=flat-square&logo=github&color=38bdf8)](https://github.com/muki01/BMW_IBus_KBus_Library/forks)
@@ -21,7 +21,8 @@ A compact Arduino library that handles framing, checksums and bus arbitration, s
 [Wiring](#-wiring) ·
 [Examples](#-examples) ·
 [Where to Connect](#-where-to-connect-bmw-e46) ·
-[Main Project](https://github.com/muki01/BMW_IBus_KBus)
+[FAQ](#-faq) ·
+[Firmware Project](https://github.com/muki01/BMW_IBus_KBus)
 
 </div>
 
@@ -69,9 +70,11 @@ Looking for ready-to-flash firmware? The companion project **[BMW_IBus_KBus](htt
 
 ## 📦 Installation
 
-**Arduino IDE** — download this repository as a ZIP (**Code → Download ZIP**), then choose **Sketch → Include Library → Add .ZIP Library…**
+**Arduino IDE Library Manager** — the library is on its way into the Library Manager. As soon as it is listed, open **Sketch → Include Library → Manage Libraries…**, search for **BMW IBus KBus** and click **Install**.
 
-**Manual** — clone it into your Arduino `libraries` folder:
+**ZIP file** — until then, download this repository as a ZIP (**Code → Download ZIP**) and choose **Sketch → Include Library → Add .ZIP Library…**
+
+**Git** — or clone it into your `libraries` folder:
 
 ```bash
 git clone https://github.com/muki01/BMW_IBus_KBus_Library.git
@@ -316,12 +319,41 @@ The I/K-Bus is **not** available on the OBD-II port. The easiest access point is
 
 Include `BMW_IBus_KBus_Modules.h` to use names such as `M_MFL`, `M_RAD`, `M_IKE` and `M_LCM` instead of raw addresses.
 
-## 🔄 Upgrading from IbusSerial
+## ❓ FAQ
 
-Sketches written for the earlier `IbusSerial` version still compile — `#include <IbusSerial.h>` and the `IbusSerial` class name are kept as aliases. Two behaviours changed:
+<details>
+<summary><b>What is the difference between the I-Bus and the K-Bus?</b></summary>
 
-- **`write()` now appends the checksum.** Remove the checksum byte from your message arrays, or pass `false` as the third argument.
-- **All modules are forwarded by default.** The previous version passed on only a fixed list of modules. Use `setSourceFilter()` to restore a filter.
+Electrically and logically they are the same protocol. The <b>I-Bus</b> (<i>Instrument / Information Bus</i>) connects infotainment devices such as the radio, navigation, telephone and steering-wheel buttons. The <b>K-Bus</b> (<i>Karosserie</i> — body bus) connects body electronics such as the general module, light module, climate control and rain sensor. Cars with both buses link them through the instrument cluster, which acts as a gateway. The E46 uses the K-Bus for everything.
+</details>
+
+<details>
+<summary><b>Is the K-Bus the same as the K-Line or OBD-II?</b></summary>
+
+No. The <b>K-Line</b> (ISO 9141 / KWP2000) is the diagnostic line on the OBD-II port. The <b>K-Bus</b> is the car's internal body network and is not present on the OBD-II connector. For K-Line diagnostics see the <a href="https://github.com/muki01/OBD2_KLine_Library">OBD2 K-Line Library</a>.
+</details>
+
+<details>
+<summary><b>Can I connect the bus directly to a microcontroller pin?</b></summary>
+
+No. The bus idles at battery voltage and will destroy a 5 V or 3.3 V input. Always use a transceiver circuit — see <a href="#-wiring">Wiring</a>.
+</details>
+
+<details>
+<summary><b>Is it only for Arduino boards?</b></summary>
+
+No. It is written for the Arduino framework, so it also builds for the ESP32, STM32, Raspberry Pi Pico and UNO R4. See <a href="#-platform-support">Platform Support</a> for what has been verified.
+</details>
+
+<details>
+<summary><b>Where can I find messages for my car?</b></summary>
+
+The <a href="https://github.com/muki01/BMW_IBus_KBus">firmware project</a> contains a table of more than 100 messages for the BMW E46 — lights, windows, locks, wipers and more — together with complete sketches.
+</details>
+
+## 🤝 Contributing
+
+Contributions are welcome — especially test reports from the experimental platforms and from other chassis. Please read the **[Contributing Guide](CONTRIBUTING.md)** and the **[Code of Conduct](CODE_OF_CONDUCT.md)**, then open an [issue](https://github.com/muki01/BMW_IBus_KBus_Library/issues/new/choose) or a pull request.
 
 ## 🔗 Related Projects
 
@@ -354,5 +386,7 @@ Released under the [MIT License](LICENSE).
 <div align="center">
 
 Created by [**Muki**](https://github.com/muki01) · If this library helped you, please give it a ⭐
+
+<sub>BMW · I-Bus · K-Bus · IBus · KBus · E46 · E39 · E38 · E53 · Arduino · ESP32 · STM32 · Raspberry Pi Pico · TH3122 · car hacking</sub>
 
 </div>

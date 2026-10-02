@@ -7,7 +7,6 @@
 ###########################################
 
 BMW_IBus_KBus	KEYWORD1
-IbusSerial	KEYWORD1
 
 ###########################################
 # Methods and Functions (KEYWORD2)
