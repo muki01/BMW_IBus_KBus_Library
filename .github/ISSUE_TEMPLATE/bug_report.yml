@@ -10,7 +10,7 @@ body:
     id: version
     attributes:
       label: Library version
-      placeholder: e.g. 1.0.0, or the commit you are using
+      placeholder: e.g. 1.0.3, or the commit you are using
     validations:
       required: true
   - type: input

@@ -8,7 +8,7 @@ By participating, you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 | | |
 |---|---|
-| 🧪 **Report a tested platform** | The ESP32, STM32, Raspberry Pi Pico and UNO R4 builds are experimental. Tell us how they behave in a car. |
+| 🧪 **Report a tested platform** | The STM32, Raspberry Pi Pico and UNO R4 builds are experimental. Tell us how they behave in a car. |
 | 🚗 **Report a tested vehicle** | Which chassis and model year did you try, and what worked? |
 | 🐛 **Report a bug** | Use the **Bug report** template and include the debug output whenever possible. |
 | 💡 **Suggest a feature** | Use the **Feature request** template. |

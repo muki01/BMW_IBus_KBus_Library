@@ -26,6 +26,12 @@ jobs:
           - name: "ESP32 Dev Module"
             fqbn: "esp32:esp32:esp32"
             platform: "esp32:esp32"
+          - name: "ESP32-C6 Dev Module"
+            fqbn: "esp32:esp32:esp32c6"
+            platform: "esp32:esp32"
+          - name: "ESP32-C3 Dev Module"
+            fqbn: "esp32:esp32:esp32c3"
+            platform: "esp32:esp32"
 
     steps:
       - name: Checkout repository

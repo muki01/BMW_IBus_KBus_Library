@@ -20,7 +20,7 @@ A compact library for Arduino, ESP32, STM32 and Raspberry Pi Pico that handles f
 
 <p>
   <a href="#-platform-support"><img alt="Arduino" height="24" src="https://img.shields.io/badge/Arduino-00979D?style=flat&logo=arduino&logoColor=white"></a>
-  <a href="#-platform-support"><img alt="ESP32 experimental" height="24" src="https://img.shields.io/badge/ESP32-experimental-E7352C?style=flat&logo=espressif&logoColor=white&labelColor=1f2328"></a>
+  <a href="#-platform-support"><img alt="ESP32 tested" height="24" src="https://img.shields.io/badge/ESP32-tested-16a34a?style=flat&logo=espressif&logoColor=white&labelColor=1f2328"></a>
   <a href="#-supported-vehicles"><img alt="BMW I-Bus and K-Bus" height="24" src="https://img.shields.io/badge/BMW-I--Bus%20%C2%B7%20K--Bus-0066B1?style=flat&logo=bmw&logoColor=white&labelColor=1f2328"></a>
 </p>
 
@@ -229,11 +229,20 @@ With the TH3122 / ELMOS transceiver powering the microcontroller from its 5 V re
 
 | Platform | Status |
 | :-- | :-- |
-| Arduino Nano / Uno / Mega (ATmega328P, ATmega2560) | ✅ Reference platform — developed on an Arduino Nano in a BMW E46 |
-| ESP32 | 🧪 Experimental — compiles on Arduino-ESP32 2.x and 3.x, not yet verified in a vehicle |
+| Arduino Nano / Uno / Mega (ATmega328P, ATmega2560) | ✅ Tested in a BMW E46 with an Arduino Nano |
+| ESP32 | ✅ Tested in a BMW E46 with an ESP32-C6 (Arduino-ESP32 3.x); compiles on Arduino-ESP32 2.x and 3.x |
 | Raspberry Pi Pico, STM32, UNO R4 | 🧪 Experimental — compiles, not yet verified in a vehicle |
 
-On ESP32 the examples use `Serial2` for the bus and USB for debug output. Mark your interrupt function with `IBUS_ISR_ATTR` so that it is placed in RAM:
+On the ESP32 the examples use `Serial1` for the bus and USB for the debug output. Open the port on your pins before the library uses it — the ESP32-C3 has no `Serial2`, and on the ESP32-C6 `Serial2` is the low-power UART:
+
+```cpp
+Serial1.begin(9600, SERIAL_8E1, BUS_RX_PIN, BUS_TX_PIN);
+ibus.setIbusSerial(Serial1);
+```
+
+The examples use RX 5, TX 4, SEN/STA 7 and EN 3 on the ESP32-C6, C3 and S3, and RX 16, TX 17, SEN/STA 4 and EN 5 on the classic ESP32, where GPIO 6–11 belong to the flash chip.
+
+Mark your interrupt function with `IBUS_ISR_ATTR` so that it is placed in RAM:
 
 ```cpp
 void IBUS_ISR_ATTR startTimer() {
